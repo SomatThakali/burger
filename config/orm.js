@@ -50,6 +50,7 @@ function objToSql(obj) {
 let orm = {
   selectAll: function(tableInput, callback) {
     let queryString = `SELECT * FROM ${tableInput};`;
+    console.log(queryString);
     connection.query(queryString, (err, result) => {
       if (err) {
         throw err;
@@ -69,7 +70,6 @@ let orm = {
       callback(result);
     });
   },
-
   updateOne: function(table, objColVals, condition, callback) {
     /* UPDATE `table_name` SET `column_name` = `new_value' [WHERE condition]*/
     let queryString = `UPDATE ${table} SET ${objToSql(
@@ -86,7 +86,7 @@ let orm = {
   },
   delete: function(table, condition, callback) {
     let queryString = `DELETE FROM ${table} WHERE ${condition}`;
-
+    console.log(queryString);
     connection.query(queryString, (err, result) => {
       if (err) {
         throw err;
