@@ -1,6 +1,6 @@
 const express = require("express");
 
-const router = express.Router();
+let router = express.Router();
 
 let burger = require("../models/burger.js");
 
@@ -9,7 +9,7 @@ router.get("/", (req, res) => {
     let hbsObject = {
       burgers: data
     };
-    console.log(hbsObject);
+    console.log("Objects ", hbsObject);
     res.render("index", hbsObject);
   });
 });
@@ -20,14 +20,14 @@ router.post("/api/burgers", (req, res) => {
     [req.body.burger_name, req.body.devoured],
     result => {
       /* Send back the ID of the new quote */
-      res.json({ id: result.insertId });
+      res.json({ burger_id: result.insertId });
     }
   );
 });
 
 router.put("/api/burgers/:id", (req, res) => {
-  var condition = "id = " + req.params.burger_id;
-
+  let condition = "id = " + req.params.id;
+  console.log(req.params.id);
   console.log("condition", condition);
 
   burger.update(
@@ -47,10 +47,10 @@ router.put("/api/burgers/:id", (req, res) => {
 });
 
 router.delete("/api/burgers/:id", (req, res) => {
-  var condition = "id = " + req.params.burger_id;
-
+  let condition = `id = ${req.params.id}`;
   burger.delete(condition, result => {
     if (result.affectedRows == 0) {
+      // If no rows were changed, then the ID must not exist, so 404
       return res.status(404).end();
     } else {
       res.status(200).end();
