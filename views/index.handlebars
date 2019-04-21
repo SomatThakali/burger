@@ -1,4 +1,4 @@
-<h1 class="text-center">Eat-Da-Burger!</h1>
+<h1 class="text-center p-4 mb-5">Eat-Da-Burger!</h1>
 
 <main>
     <div class="container">
@@ -9,8 +9,8 @@
                 {{#unless this.devoured}}
                 <div>
                     <form action="/{{this.id}}?_method=PUT" method="POST">
-                        <button type="submit" class="btn btn-outline-secondary mb-4"> {{this.burger_name}} <i
-                                class="fa fa-arrow-right"></i></button>
+                        <button type="submit" class="btn btn-outline-primary mb-4 font-weight-bold">
+                            {{this.burger_name}} <i class="fa fa-arrow-right"></i></button>
                     </form>
                 </div>
                 {{/unless}}
@@ -23,8 +23,8 @@
                 {{#if this.devoured}}
                 <div>
                     <form method="POST" action="/{{this.id}}?_method=DELETE">
-                        <button type="submit" class="btn btn-outline-secondary mb-4">{{this.burger_name}} <i
-                                class="fa fa-trash"></i> </button>
+                        <button type="submit" class="btn btn-outline-dark mb-4 font-weight-bold">{{this.burger_name}}
+                            <i class="fa fa-trash"></i> </button>
                     </form>
                 </div>
 
@@ -41,7 +41,7 @@
     <div class="col">
         <form action="/" method="POST">
             <input type="text" class="form" name="burger_name" placeholder="Enter the Burger">
-            <button type="submit" class="btn btn-outline-light">Add The Burger</button>
+            <button type="submit" class="btn btn-outline-dark font-weight-bold">Add The Burger</button>
         </form>
     </div>
 </div>
