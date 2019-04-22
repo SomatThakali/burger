@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const methodOverride = require("method-override");
 
-const PORT = process.env.PORT || 3300;
+let PORT = process.env.PORT || 3600;
 
 const app = express();
 
