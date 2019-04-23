@@ -5,8 +5,7 @@ const db = process.env.JAWSDB_URL || {
   host: "localhost",
   user: "root",
   password: "",
-  database: "burgers_db",
-  use_env_variable: "JAWS_DB_URL"
+  database: "burgers_db"
 };
 
 let connection = mysql.createConnection(db);
