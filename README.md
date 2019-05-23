@@ -22,4 +22,4 @@ run: `npm install`
 
 ## Live Demo
 
-[Live Demo Link](https://burger-smt.herokuapp.com/)
+[Live Demo Link](https://burger-smt1.herokuapp.com/)

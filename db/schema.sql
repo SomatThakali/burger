@@ -1,6 +1,6 @@
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '';
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'thakali1234';
 flush privileges;
-ALTER USER 'root'@'localhost' IDENTIFIED BY '';
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'thakali1234';
 
 
 DROP DATABASE  IF EXISTS burgers_db;
